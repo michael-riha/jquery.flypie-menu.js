@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jquery.FlyPie-Menu.js - A JQuery Plugin for advanced UI Design.</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+    	/* Language Example */
+        #languageExample {
+        	height: 140px;
+        }
+    	
+    	/* Path Example */
+        #pathExample {
+        	height: 266px;
+        }
+        
+        #pathExample li {
+        	background-color: #444;
+        	border: 3px solid #fff;
+        	box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0, rgba(0, 0, 0, 0.2) 0 0 0 1px, inset rgba(0, 0, 0, 0.5) 0 0 2px 0;
+        	border-radius: 50%;
+        }
+        
+        #pathExample li span {
+        	display: none;
+        }
+        
+        #pathExample li#togglePathMenu {
+        	background-color: #f00;
+        	border-width: 4px;
+        	
+        	background: -webkit-linear-gradient(top, #f76f54 0%, #dd3535 49%, #d32121 51%, #c61f1f 100%);
+        	background: -moz-linear-gradient(top, #f76f54 0%, #dd3535 49%, #d32121 51%, #c61f1f 100%);
+        	background: -ms-linear-gradient(top, #f76f54 0%, #dd3535 49%, #d32121 51%, #c61f1f 100%);
+        	background: -o-linear-gradient(top, #f76f54 0%, #dd3535 49%, #d32121 51%, #c61f1f 100%);
+        	background: linear-gradient(top, #f76f54 0%, #dd3535 49%, #d32121 51%, #c61f1f 100%);
+        }
+    </style>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    	$(document).ready(function(){
+            var imagepath = "http://www.beyondthestatic.com/media/themes/BeyondTheStatic/images/background/";
+            var images = ["background.jpg", "background2.jpg", "background3.jpg" ];
+            var src = imagepath + images[parseInt(Math.random()*images.length)];
+           	$('#bg').attr("src", src);
+            
+            // replace version number with the latest version
+			var latest_version = 'v0.3';
+
+			$(".relace-version").each(function() {
+				var el = $(this);
+				if(this.tagName == 'A') {
+					el.attr("href", el.attr("href").replace('v1.0', latest_version));
+				} else {
+					el.text(el.text().replace('v1.0', latest_version));
+				}
+			});
+        });
+    </script>
+</head>
+
+<body>
+<img id="bg" alt="background image" src="">
+
+<div class="container-narrow">
+
+    <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">About</a></li>
+            <li><a href="https://github.com/beyondthestatic/jquery.flypie-menu.js/wiki">Docs</a></li>
+            <li><a href="https://github.com/beyondthestatic/jquery.flypie-menu.js/issues">Issues</a></li>
+            <li><a href="https://github.com/beyondthestatic/jquery.flypie-menu.js">Source on GitHub</a></li>
+        </ul>
+        <a href="http://www.beyondthestatic.com" target="_blank"><img src="img/logo.png" alt="beyond the static" /></a>
+    </div>
+
+    <hr>
+
+    <div class="jumbotron">
+        <h1>FlyPie-Menu.js</h1>
+        <p class="lead">A JQuery Plugin for advanced UI Design.</p>
+        <p><a class="btn btn-large btn-download relace-version" href="https://github.com/EightMedia/hammer.js/tree/v1.0/dist">
+                Download FlyPie-Menu.js <small class="relace-version">v1.0</small></a>
+        </p>
+        <p>
+            <a href="https://github.com/beyondthestatic/jquery.flypie-menu.js">View Source on GitHub &rsaquo;</a><br>
+            <a href="https://github.com/beyondthestatic/jquery.flypie-menu.js/wiki">Read documentation &rsaquo;</a><br>
+            <a href="#examples">View Examples &rsaquo;</a>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="row-fluid marketing">
+        <div class="span6">
+            <h4>It's Easy and Smart</h4>
+            <p>FlyPie-Menu.js is easy to setup and configure. Try it in your project.</p>
+            
+            <h4>Browser Support</h4>
+            <p>This plugin was was tested and works on Chrome, Safari and Firefox.</p>
+        </div>
+
+        <div class="span6">
+            <h4>Foolproof Implementation</h4>
+			<p>
+<pre>$('.flypie').flypiemenu();</pre>
+			</p>
+			
+            <h4>Simple to adjust</h4>
+			<p>
+<pre>$('.flypie').flypiemenu({
+	'degreeStart': 192, 
+	'maxItems': 8, 
+	'itemRad': 35, 
+	'orbitRad': 89, 
+	'buttonRad': 22,
+});</pre>
+			</p>
+			
+            <h5><a href="https://github.com/beyondthestatic/jquery.flypie-menu.js">Get Started  &raquo;</a></h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="row-fluid marketing">
+        <div class="span12">
+            <h3><a name="examples">Examples</a></h3>
+            <p>Some examples to show you how <a href="https://github.com/beyondthestatic/jquery.flypie-menu.js">FlyPie-Menu.js</a> can be used.</p>
+            
+            <h4>Language Selection</h4>
+            <p>Click on the big flag to open and close the FlyPie-Menu. Click on an Item to change the Language/Flag.</p>
+            <div id="languageExample">
+            	<aside>
+            		<ul>
+            			<li class="flag"><img src="img/flags/us.png" title="English" alt="English" /></li>
+            			<li class="flag"><img src="img/flags/de.png" title="German" alt="German" /></li>
+            			<li class="flag"><img src="img/flags/fr.png" title="French" alt="French" /></li>
+            			<li id="toggleLanguageMenu"><img src="img/flags/us.png" title="English" alt="English" /></li>
+            		</ul>
+            	</aside>
+            </div>
+            
+            <h4>Menu &agrave; la Path</h4>
+            <p>Hover over the red button to open the FlyPie-Menu.</p>
+            <div id="pathExample">
+            	<aside>
+            		<ul>
+            			<li><span>Item</span></li>
+            			<li><span>Item</span></li>
+            			<li><span>Item</span></li>
+            			<li><span>Item</span></li>
+            			<li><span>Item</span></li>
+            			<li><span>Item</span></li>
+            			<li><span>Item</span></li>
+            			<li id="togglePathMenu"><span>Toggle</span></li>
+            		</ul>
+            	</aside>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/jquery.flypie-menu.js"></script>
+    <script>
+        /* Language Example */
+        $('#toggleLanguageMenu').flypiemenu({
+        	'degreeStart':		0,
+			'maxItems':			8,
+			'itemRad':			25,
+			'orbitRad':			80,
+			'buttonRad':		35,
+			'orientation':		'top-right',
+			'popup':			'false',
+			'mode':				'click',
+			'direction':		'counterclockwise'
+        });
+        
+        $('.flag').click(function(e) {
+        	var activeImg = $(this).find('img');
+        	$('#toggleLanguageMenu img').attr({
+        		'src':		activeImg.attr('src'),
+        		'title':	activeImg.attr('title'),
+        		'alt':		activeImg.attr('alt'),
+        	});
+        });
+        
+        /* Path Example */
+        $('#togglePathMenu').flypiemenu({
+        	'degreeStart':		292,
+			'maxItems':			16,
+			'itemRad':			14,
+			'orbitRad':			120,
+			'buttonRad':		25,
+			'orientation':		'left',
+			'popup':			'false',
+			'mode':				'mouseover',
+			'direction':		'clockwise'
+        });
+    </script>
+
+    <hr style="margin-bottom: 30px;">
+
+    <div class="footer clearfix">
+        <p class="pull-right">
+            By <a href="http://www.beyondthestatic.com/" title="Beyond The Static">Beyond The Static</a> in Vienna, Austria.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
