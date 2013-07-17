@@ -31,15 +31,17 @@ Settings
 Default settings:
 
 ```js
-'degreeStart':	0,					//the position of your first button in degree
-'maxItems':		10,					//Space reserved for a certain amount of Items
-'itemRad':		25,					//radius of the item objects in px
-'orbitRad':		100,				//radius from button middle to the items in px
-'buttonRad':	40,					//radius of the button object in px
-'orientation':	'center',			//placement of the button inside its box.
-'popup':		true,				//decide how links inside the items should be opened
-'mode':			'mouseover',		//on which event you want to trigger FlyPie-Menu
-'direction':	'counterclockwise'	//items go counter- or clockwise around the button
+{
+	'degreeStart':	0,					//the position of your first button in degree
+	'maxItems':		10,					//Space reserved for a certain amount of Items
+	'itemRad':		25,					//radius of the item objects in px
+	'orbitRad':		100,				//radius from button middle to the items in px
+	'buttonRad':	40,					//radius of the button object in px
+	'orientation':	'center',			//placement of the button inside its box.
+	'popup':		true,				//decide how links inside the items should be opened
+	'mode':			'mouseover',		//on which event you want to trigger FlyPie-Menu
+	'direction':	'counterclockwise'	//items go counter- or clockwise around the button
+}
 ```
 
 Possible values:
