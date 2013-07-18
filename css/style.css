@@ -22,6 +22,9 @@ img#bg {
 .nav {
 	margin-top: 75px;
 }
+h3 small {
+	font-size: 0.8em;
+}
 a {
 	color: #fff;
 	text-decoration: underline;
@@ -30,15 +33,26 @@ a:hover, a:focus, a:active {
 	color: #fff;
 	text-decoration: underline !important;
 }
-h3 a {
+h3 a, h4 a {
 	text-decoration: none !important;
 }
-h3 a:hover, h3 a:focus, h3 a:active {
+h3 small a {
+	text-decoration: underline !important;
+}
+h3 a:hover, h3 a:focus, h3 a:active, h4 a:hover, h4 a:focus, h4 a:active {
 	text-decoration: none !important;
+}
+h3 small a:hover, h3 small a:focus, h3 small a:active {
+	text-decoration: underline !important;
 }
 hr {
 	border-top-color: #fff;
 	border-bottom-color: #fff;
+}
+hr.small {
+	border-top-color: #fff;
+	border-bottom-color: transparent;
+	margin: 30px 0 !important;
 }
 .nav > li > a:hover, 
 .nav > li > a:focus {
@@ -67,11 +81,26 @@ hr {
 
 
 /* Custom container */
+.container-top {
+	margin: 0 auto;
+	max-width: 700px;
+	padding: 0 30px;
+	background: url('../img/site_content_top.png') no-repeat;
+	height: 24px;
+}
+.container-bottom {
+	margin: 0 auto;
+	max-width: 700px;
+	padding: 0 30px;
+	background: url('../img/site_content_bottom.png') no-repeat;
+	height: 43px;
+}
 .container-narrow {
 	margin: 0 auto;
 	max-width: 700px;
-	padding: 20px 30px;
-	background: rgba(0,0,0,0.8);
+	padding: 0 30px;
+	/*background: rgba(0,0,0,0.8);*/
+	background: url('../img/site_content_bg.png') repeat-y;
 }
 .container-narrow > hr {
 	margin: 0;
@@ -98,10 +127,20 @@ hr {
 	padding: 14px 24px;
 }
 
-	/* Supporting marketing content */
+/* Supporting marketing content */
 .marketing {
 	margin: 60px 0;
 }
+.marketing-top {
+	margin-top: 60px;
+}
+.marketing-bottom {
+	margin-bottom: 60px;
+}
 .marketing p + h4 {
 	margin-top: 28px;
+}
+
+.github-ribbon {
+	position: fixed !important;
 }

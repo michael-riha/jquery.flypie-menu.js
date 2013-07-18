@@ -6,17 +6,24 @@
     <title>jquery.FlyPie-Menu.js - A JQuery Plugin for advanced UI Design.</title>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 	
+	<meta property="og:image" content="img/fork-me-github.jpg"/>
+	<meta property="og:title" content="FlyPie-Menu.js - A JQuery Plugin for advanced UI Design."/>
+	<meta property="og:description" content="FlyPie-Menu.js is easy to setup and configure. Try it in your project." />
+	<meta property="og:url" content="http://beyondthestatic.github.io/jquery.flypie-menu.js/" />
+	<meta property="og:type" content="website" />
+	
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/css3-github-ribbon.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style type="text/css">
     	/* Language Example */
         #languageExample {
-        	height: 140px;
+        	min-height: 140px;
         }
     	
     	/* Path Example */
         #pathExample {
-        	height: 266px;
+        	min-height: 266px;
         }
         
         #pathExample li {
@@ -45,8 +52,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
     	$(document).ready(function(){
-            var imagepath = "http://www.beyondthestatic.com/media/themes/BeyondTheStatic/images/background/";
-            var images = ["background.jpg", "background2.jpg", "background3.jpg" ];
+            var imagepath = "img/background/";
+            var images = ["background1.jpg", "background2.jpg", "background3.jpg", "background4.jpg"];
             var src = imagepath + images[parseInt(Math.random()*images.length)];
            	$('#bg').attr("src", src);
             
@@ -61,6 +68,27 @@
 					el.text(el.text().replace('v1.0', latest_version));
 				}
 			});
+			
+			//shrink the code examples
+			$('pre').each(function() {
+				var el = $(this);
+				if(el.height() > 320) {
+					/*el.parent().append('<a class="show-more" href="javascript:void(0);">Show Everything</a>');
+					
+					var height = el.height();
+					el.siblings('.show-more').click(function() {
+						el.animate({
+							'height': height
+						}, 200);
+						$(this).remove();
+					});*/
+					
+					el.css({
+						'height': '320px',
+						'overflow-y': 'scroll'
+					});
+				}
+			});
         });
     </script>
 </head>
@@ -68,11 +96,15 @@
 <body>
 <img id="bg" alt="background image" src="">
 
+<a href="https://github.com/beyondthestatic/jquery.flypie-menu.js" class="github-ribbon">Fork me on GitHub</a>
+
+<div class="container-top"></div>
 <div class="container-narrow">
 
     <div class="masthead">
         <ul class="nav nav-pills pull-right">
             <li class="active"><a href="#">About</a></li>
+            <li><a href="#examples">Examples</a></li>
             <li><a href="https://github.com/beyondthestatic/jquery.flypie-menu.js/wiki">Docs</a></li>
             <li><a href="https://github.com/beyondthestatic/jquery.flypie-menu.js/issues">Issues</a></li>
             <li><a href="https://github.com/beyondthestatic/jquery.flypie-menu.js">Source on GitHub</a></li>
@@ -85,7 +117,7 @@
     <div class="jumbotron">
         <h1>FlyPie-Menu.js</h1>
         <p class="lead">A JQuery Plugin for advanced UI Design.</p>
-        <p><a class="btn btn-large btn-download relace-version" href="https://github.com/EightMedia/hammer.js/tree/v1.0/dist">
+        <p><a class="btn btn-large btn-download relace-version" href="https://raw.github.com/beyondthestatic/jquery.flypie-menu.js/master/jquery.flypie-menu.js">
                 Download FlyPie-Menu.js <small class="relace-version">v1.0</small></a>
         </p>
         <p>
@@ -129,12 +161,24 @@
     
     <hr>
 
-    <div class="row-fluid marketing">
+    <div class="row-fluid marketing-top">
         <div class="span12">
-            <h3><a name="examples">Examples</a></h3>
+            <h3><a name="examples">Examples</a> <small><a href="#languageSelection">Language Selection</a> & <a href="#pathMenu">Menu &agrave; la Path</a></small></h3>
             <p>Some examples to show you how <a href="https://github.com/beyondthestatic/jquery.flypie-menu.js">FlyPie-Menu.js</a> can be used.</p>
-            
-            <h4>Language Selection</h4>
+        </div>
+    </div>
+    
+    <hr class="small">
+    
+    <div class="row-fluid">
+    	<div class="span12">
+    		<h4><a name="languageSelection">Language Selection</a></h4>
+    	</div>
+    </div>
+    
+    <div class="row-fluid">
+		<div class="span6">
+            <h5>Live Demo</h5>
             <p>Click on the big flag to open and close the FlyPie-Menu. Click on an Item to change the Language/Flag.</p>
             <div id="languageExample">
             	<aside>
@@ -146,8 +190,89 @@
             		</ul>
             	</aside>
             </div>
-            
-            <h4>Menu &agrave; la Path</h4>
+        </div>
+        
+        <div class="span6">
+        	<h5>JavaScript</h5>
+			<p>
+<pre>$('#toggleLanguageMenu').flypiemenu({
+  'degreeStart':  0,
+  'maxItems':     8,
+  'itemRad':      25,
+  'orbitRad':     80,
+  'buttonRad':    35,
+  'orientation':  'top-right',
+  'popup':        'false',
+  'mode':         'click',
+  'direction':    'counterclockwise'
+});
+
+$('.flag').click(function(e) {
+  var activeImg = $(this).find('img');
+  $('#toggleLanguageMenu img').attr({
+    'src':     activeImg.attr('src'),
+    'title':   activeImg.attr('title'),
+    'alt':     activeImg.attr('alt'),
+  });
+});</pre>
+			</p>
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+        	<h5>HTML</h5>
+			<p>
+<pre>&lt;div id=&quot;languageExample&quot;&gt;
+  &lt;aside&gt;
+    &lt;ul&gt;
+      &lt;li class=&quot;flag&quot;&gt;
+        &lt;img src=&quot;img/flags/us.png&quot; 
+             title=&quot;English&quot; 
+             alt=&quot;English&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;flag&quot;&gt;
+        &lt;img src=&quot;img/flags/de.png&quot;
+             title=&quot;German&quot; 
+             alt=&quot;German&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;flag&quot;&gt;
+        &lt;img src=&quot;img/flags/fr.png&quot; 
+             title=&quot;French&quot; 
+             alt=&quot;French&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li id=&quot;toggleLanguageMenu&quot;&gt;
+        &lt;img src=&quot;img/flags/us.png&quot; 
+             title=&quot;English&quot; 
+             alt=&quot;English&quot; /&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/div&gt;</pre>
+			</p>
+        </div>
+        
+        <div class="span6">
+        	<h5>CSS</h5>
+			<p>
+<pre>#languageExample {
+  min-height: 140px;
+}</pre>
+			</p>
+        </div>
+    </div>
+    
+    <hr class="small">
+    
+    <div class="row-fluid">
+    	<div class="span12">
+    		<h4><a name="pathMenu">Menu &agrave; la Path</a></h4>
+    	</div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+            <h5>Live Demo</h5>
             <p>Hover over the red button to open the FlyPie-Menu.</p>
             <div id="pathExample">
             	<aside>
@@ -163,6 +288,116 @@
             		</ul>
             	</aside>
             </div>
+        </div>
+        
+        <div class="span6">
+        	<h5>JavaScript</h5>
+			<p>
+<pre>$('#togglePathMenu').flypiemenu({
+  'degreeStart':   292,
+  'maxItems':      16,
+  'itemRad':       14,
+  'orbitRad':      120,
+  'buttonRad':     25,
+  'orientation':   'left',
+  'popup':         'false',
+  'mode':          'mouseover',
+  'direction':     'clockwise'
+});</pre>
+			</p>
+        </div>
+    </div>
+    
+    <div class="row-fluid marketing-bottom">
+        <div class="span6">
+        	<h5>HTML</h5>
+			<p>
+<pre>&lt;div id=&quot;pathExample&quot;&gt;
+  &lt;aside&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;Item&lt;/span&gt;&lt;/li&gt;
+      &lt;li id=&quot;togglePathMenu&quot;&gt;
+        &lt;span&gt;Toggle&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/div&gt;</pre>
+			</p>
+        </div>
+        
+        <div class="span6">
+        	<h5>CSS</h5>
+			<p>
+<pre>#pathExample {
+  min-height: 266px;
+}
+
+#pathExample li {
+  background-color: #444;
+  border: 3px solid #fff;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0 0 5px 0, 
+    rgba(0, 0, 0, 0.2) 0 0 0 1px, 
+    inset rgba(0, 0, 0, 0.5) 0 0 2px 0;
+  border-radius: 50%;
+}
+
+#pathExample li span {
+  display: none;
+}
+
+#pathExample li#togglePathMenu {
+  background-color: #f00;
+  border-width: 4px;
+  
+  background: 
+    -webkit-linear-gradient(
+      top, 
+      #f76f54 0%, 
+      #dd3535 49%, 
+      #d32121 51%, 
+      #c61f1f 100%
+    );
+  background: 
+    -moz-linear-gradient(
+      top, 
+      #f76f54 0%, 
+      #dd3535 49%, 
+      #d32121 51%, 
+      #c61f1f 100%
+    );
+  background: 
+    -ms-linear-gradient(
+      top, 
+      #f76f54 0%, 
+      #dd3535 49%, 
+      #d32121 51%, 
+      #c61f1f 100%
+    );
+  background: 
+    -o-linear-gradient(
+      top, 
+      #f76f54 0%, 
+      #dd3535 49%, 
+      #d32121 51%, 
+      #c61f1f 100%
+    );
+  background: 
+    linear-gradient(
+      top, 
+      #f76f54 0%, 
+      #dd3535 49%, 
+      #d32121 51%, 
+      #c61f1f 100%
+    );
+}</pre>
+			</p>
         </div>
     </div>
     
@@ -212,6 +447,7 @@
         </p>
     </div>
 </div>
+<div class="container-bottom"></div>
 
 </body>
 </html>
