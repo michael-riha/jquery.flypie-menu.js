@@ -2,6 +2,9 @@ FlyPie-Menu.js
 ==============
 Try this pie-menu with flyout elements in your projects, it's easy to use and configure.
 
+[Examples & Demo](http://beyondthestatic.github.io/jquery.flypie-menu.js)
+-------------------------------------------------------------------------
+
 Usage
 -----
 Just link jquery.flypie-menu.js on your html document and Use html structure like bellow:
@@ -14,7 +17,7 @@ Just link jquery.flypie-menu.js on your html document and Use html structure lik
 		<li>Item</li>
 		<li>Item</li>
 		<li>Item</li>
-		<li class="flypie">Toggle</li>
+		<li id="flypie">Toggle</li>
 	</ul> 
 </aside>
 ```
@@ -22,7 +25,7 @@ Just link jquery.flypie-menu.js on your html document and Use html structure lik
 Javascript:
 
 ```js
-this.$('.flypie').flyPieMenu();
+$('#flypie').flyPieMenu();
 ```
 
 Settings
