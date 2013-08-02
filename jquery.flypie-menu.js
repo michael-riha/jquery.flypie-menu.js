@@ -43,7 +43,6 @@
                 "x": plugin.settings.orbitRad + plugin.settings.itemRad,
                 "y": plugin.settings.orbitRad + plugin.settings.itemRad
             };
-            console.log(plugin.center);
             //centering the middle button
             plugin.buttonoffset = {
                 "x": plugin.center.x - plugin.settings.buttonRad,
