@@ -16,6 +16,15 @@
     <link href="css/css3-github-ribbon.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style type="text/css">
+        /* Share Example */
+        #shareExample li.share {
+			background: url('img/icons/share-icon.png') no-repeat center center;
+		}
+		
+		#shareExample li.share span {
+			display: none;
+		}
+		
     	/* Language Example */
         #languageExample {
         	min-height: 140px;
@@ -163,8 +172,119 @@
 
     <div class="row-fluid marketing-top">
         <div class="span12">
-            <h3><a name="examples">Examples</a> <small><a href="#languageSelection">Language Selection</a> & <a href="#pathMenu">Menu &agrave; la Path</a></small></h3>
+            <h3><a name="examples">Examples</a> <small><a href="#socialShare">Social Share</a>, <a href="#languageSelection">Language Selection</a> & <a href="#pathMenu">Menu &agrave; la Path</a></small></h3>
             <p>Some examples to show you how <a href="https://github.com/beyondthestatic/jquery.flypie-menu.js">FlyPie-Menu.js</a> can be used.</p>
+        </div>
+    </div>
+    
+    <hr class="small">
+    
+    <div class="row-fluid">
+    	<div class="span12">
+    		<h4><a name="socialShare">Social Share</a></h4>
+    	</div>
+    </div>
+    
+    <div class="row-fluid">
+		<div class="span6">
+            <h5>Live Demo</h5>
+            <p>Hover your mouse over the share icon to show the sharing options.</p>
+            <div id="shareExample">
+            	<aside>
+					<ul>
+						<li>
+							<a href="http://www.facebook.com/sharer.php?u=http://beyondthestatic.github.io/jquery.flypie-menu.js/">
+								<img src="img/icons/social/Facebook.png" />
+							</a>
+						</li>
+						<li>
+							<a href="http://twitter.com/home?status=FlyPie-Menu.js: http://beyondthestatic.github.io/jquery.flypie-menu.js/">
+								<img src="img/icons/social/Twitter-Bird.png" />
+							</a>
+						</li>
+						<li>
+							<a href="https://plus.google.com/share?url=http://beyondthestatic.github.io/jquery.flypie-menu.js/">
+								<img src="img/icons/social/Google-Plus.png" />
+							</a>
+						</li>
+						<li>
+							<a href="http://tumblr.com/share?s=&v=3&t=FlyPie-Menu.js&u=http://beyondthestatic.github.io/jquery.flypie-menu.js/">
+								<img src="img/icons/social/Tumblr.png" />
+							</a>
+						</li>
+						<li class="share">
+							<span>Share It!</span>
+						</li>
+					</ul>
+				</aside>
+            </div>
+        </div>
+        
+        <div class="span6">
+        	<h5>JavaScript</h5>
+			<p>
+<pre>$('#shareExample li.share').flypiemenu({
+  'degreeStart':  -15,
+  'maxItems':     10,
+  'itemRad':      25,
+  'orbitRad':     100,
+  'buttonRad':    15,
+  'orientation':  'top-right',
+  'popup':        true,
+  'mode':         'mouseover',
+  'direction':    'counterclockwise'
+});</pre>
+			</p>
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span6">
+        	<h5>HTML</h5>
+			<p>
+<pre>&lt;div id=&quot;shareExample&quot;&gt;
+  &lt;aside&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;http://www.facebook.com/sharer.php?u=http://beyondthestatic.github.io/jquery.flypie-menu.js/&quot;&gt;
+          &lt;img src=&quot;img/icons/social/Facebook.png&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;http://twitter.com/home?status=FlyPie-Menu.js: http://beyondthestatic.github.io/jquery.flypie-menu.js/&quot;&gt;
+          &lt;img src=&quot;img/icons/social/Twitter-Bird.png&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;https://plus.google.com/share?url=http://beyondthestatic.github.io/jquery.flypie-menu.js/&quot;&gt;
+          &lt;img src=&quot;img/icons/social/Google-Plus.png&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;http://tumblr.com/share?s=&amp;v=3&amp;t=FlyPie-Menu.js&amp;u=http://beyondthestatic.github.io/jquery.flypie-menu.js/&quot;&gt;
+          &lt;img src=&quot;img/icons/social/Tumblr.png&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;share&quot;&gt;
+        &lt;span&gt;Share It!&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/div&gt;</pre>
+			</p>
+        </div>
+        
+        <div class="span6">
+        	<h5>CSS</h5>
+			<p>
+<pre> #shareExample li.share {
+  background: url('img/icons/share-icon.png') no-repeat center center;
+}
+
+#shareExample li.share span {
+  display: none;
+}</pre>
+			</p>
         </div>
     </div>
     
@@ -403,6 +523,20 @@ $('.flag').click(function(e) {
     
     <script src="js/jquery.flypie-menu.js"></script>
     <script>
+    	/* Share Example */
+    	$('#shareExample li.share').flypiemenu({
+			'degreeStart':  -15,                //the position of your first button in degree
+			'maxItems':     10,                 //Space reserved for a certain amount of Items
+			'itemRad':      25,                 //radius of the item objects in px
+			'orbitRad':     100,                //radius from button middle to the items in px
+			'buttonRad':    15,                 //radius of the button object in px
+			'orientation':  'top-right',		//placement of the button inside its box.
+			'popup':        true,               //decide how links inside the items should be opened
+			'mode':         'mouseover',        //on which event you want to trigger FlyPie-Menu
+			'direction':    'counterclockwise'	//items go counter- or clockwise around the button
+		});
+    	
+    	
         /* Language Example */
         $('#toggleLanguageMenu').flypiemenu({
         	'degreeStart':		0,
